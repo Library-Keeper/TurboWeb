@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+    <script type="text/javascript">
+        VK.init({ apiId: 8154877, onlyWidgets: true });
+    </script>
+
+</head>
+<body>
+    <!-- Меню навигации -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" >
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand" ><img src="{% static 'main/img/logo.png' %}" alt="" width="150"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResposive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResposive">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}" class="nav-link">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'contacts' %}" class="nav-link">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'feedback' %}" class="nav-link">Отзывы</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="line container-fluid "></div>
+    {% block content %}
+    {% endblock %}
+
+
+
+
+</body>
+</html>
